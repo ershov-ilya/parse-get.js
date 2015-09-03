@@ -26,6 +26,10 @@ var GET=(function(){
         return false;
     };
 
+    PUBLIC.set=function(key, val){
+        config[key]=val;
+    };
+
     PUBLIC.parse=function(options){
         //var defaults={
         //    url:''
