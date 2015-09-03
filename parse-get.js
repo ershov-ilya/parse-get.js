@@ -16,10 +16,20 @@ var GET=(function(){
     };
 
     PUBLIC.config=function(data){
-        config= $.extend(config, data);
+        if(typeof $ != 'undefined'){
+            config=$.extend(config, data);
+            return true;
+        }
+        for(k in data){
+            config[k]=data[k];
+        }
+        return false;
     };
 
-    PUBLIC.parse=function(url){
+    PUBLIC.parse=function(options){
+        //var defaults={
+        //    url:''
+        //};
         utm_keys = apicontrol.config.get_keys;
         if(!url || url == '') url = decodeURI(document.location.search);
         if(url.indexOf('?') < 0) return {};
