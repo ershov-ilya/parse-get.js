@@ -12,7 +12,7 @@ var GET=(function(){
     var PUBLIC={};
     var config={
         keys:[],
-        all:false,
+        all:true,
         redirect:false
     };
     var clean_url;
@@ -20,7 +20,6 @@ var GET=(function(){
 
     PUBLIC.config=function(data){
         if(typeof data == 'undefined'){
-            console.log(config);
             return true;
         }
         if(typeof $ != 'undefined'){
