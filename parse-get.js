@@ -30,11 +30,8 @@ var GET=(function(){
         config[key]=val;
     };
 
-    PUBLIC.parse=function(options){
-        //var defaults={
-        //    url:''
-        //};
-        utm_keys = apicontrol.config.get_keys;
+    PUBLIC.parse=function(url){
+        utm_keys = config.get_keys;
         if(!url || url == '') url = decodeURI(document.location.search);
         if(url.indexOf('?') < 0) return {};
 
