@@ -17,6 +17,6 @@ var GET=(function(){
     };
 
     PUBLIC.parse=function(url){
-        
+
     };
 })();
