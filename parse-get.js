@@ -89,8 +89,9 @@ var GET=(function(){
         return (GET);
     };
 
-    PUBLIC.redirect=function() {
-        if(typeof clean_url != 'undefined') window.history.pushState(window.history.state, '', clean_url);
+    PUBLIC.redirect=function(url) {
+        var target_url = url || clean_url;
+        if(typeof target_url != 'undefined') window.history.pushState(window.history.state, '', target_url);
     };
 
     PUBLIC.init=function(options){
