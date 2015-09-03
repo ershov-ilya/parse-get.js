@@ -14,6 +14,7 @@ var GET=(function(){
         utm_keys:[],
         redirect:false
     };
+    var clean_url;
     PUBLIC.arr={};
 
     PUBLIC.config=function(data){
@@ -76,9 +77,15 @@ var GET=(function(){
         }
         if(OTHER.length) new_url+='?'+OTHER.join('&');
         if(window.location.hash) new_url+=window.location.hash;
+        clean_url=new_url;
+        if(config.redirect) window.history.pushState(window.history.state, '', new_url);
 
         PUBLIC.arr=GET;
         return (GET);
+    };
+
+    PUBLIC.redirect=function() {
+        if(typeof clean_url != 'undefined') window.history.pushState(window.history.state, '', clean_url);
     };
 
     PUBLIC.init=function(options){
