@@ -14,8 +14,13 @@ var GET=(function(){
         utm_keys:[],
         redirect:false
     };
+    PUBLIC.arr={};
 
     PUBLIC.config=function(data){
+        if(typeof data == 'undefined'){
+            console.log(config);
+            return true;
+        }
         if(typeof $ != 'undefined'){
             config=$.extend(config, data);
             return true;
@@ -71,6 +76,10 @@ var GET=(function(){
         }
         if(OTHER.length) new_url+='?'+OTHER.join('&');
         if(window.location.hash) new_url+=window.location.hash;
+
+        PUBLIC.arr=GET;
         return (GET);
     };
+
+    return PUBLIC;
 })();
