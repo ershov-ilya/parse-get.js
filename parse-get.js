@@ -81,5 +81,10 @@ var GET=(function(){
         return (GET);
     };
 
+    PUBLIC.init=function(options){
+        PUBLIC.config(options);
+        PUBLIC.parse();
+    };
+
     return PUBLIC;
 })();
