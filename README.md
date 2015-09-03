@@ -16,7 +16,7 @@ console.log(GET.arr); // array of GET parameters
 
 Also you can filter which parameters are needed to parse from URL with options
 
-GET.init(options) is alias for GET.config and GET.parse methods:
+**GET.init(options)** is alias for **GET.config** and **GET.parse** methods:
 ```
 GET.init=function(options){
     GET.config(options);
@@ -33,11 +33,13 @@ config={
 };
 ```
 
-Where **keys:[]** - array of only keys to parse (needs **all** parameter off)
+Where:
 
-And **redirect:true** - enables hide from URI parsed GET keys  (needs **all** parameter off)
++ **keys:[]** - array of only keys to parse (needs **all** parameter off)
 
-**all** disables options *keys* and *redirect* and makes GET.parse to simple return array with all found parameters:values.
++ And **redirect:true** - enables hide from URI parsed GET keys  (needs **all** parameter off)
+
++ **all** disables options *keys* and *redirect* and makes GET.parse to simple return array with all found parameters:values.
 
 i.e alternative configuration
 ```
