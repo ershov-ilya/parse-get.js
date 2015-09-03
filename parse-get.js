@@ -46,7 +46,7 @@ var GET=(function(){
             OTHER = [],
             params = [],
             key = [],
-            split=[],
+            split,
             new_url;
 
         split = url.split('?');
